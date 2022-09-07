@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fastpages Notebook Blog Post | Hui’s personal blog!</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Fastpages Notebook Blog Post" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A tutorial of fastpages for Jupyter notebooks." />
+<meta property="og:description" content="A tutorial of fastpages for Jupyter notebooks." />
+<link rel="canonical" href="https://hchen98.github.io/blog/test/markdown/2022/09/06/test.html" />
+<meta property="og:url" content="https://hchen98.github.io/blog/test/markdown/2022/09/06/test.html" />
+<meta property="og:site_name" content="Hui’s personal blog!" />
+<meta property="og:image" content="https://hchen98.github.io/blog/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-06T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://hchen98.github.io/blog/images/chart-preview.png" />
+<meta property="twitter:title" content="Fastpages Notebook Blog Post" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-06T00:00:00-05:00","datePublished":"2022-09-06T00:00:00-05:00","description":"A tutorial of fastpages for Jupyter notebooks.","headline":"Fastpages Notebook Blog Post","image":"https://hchen98.github.io/blog/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://hchen98.github.io/blog/test/markdown/2022/09/06/test.html"},"url":"https://hchen98.github.io/blog/test/markdown/2022/09/06/test.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hchen98.github.io/blog/feed.xml" title="Hui's personal blog!" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Hui&#39;s personal blog!</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fastpages Notebook Blog Post</h1><p class="page-description">A tutorial of fastpages for Jupyter notebooks.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-06T00:00:00-05:00" itemprop="datePublished">
+        Sep 6, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#test">test</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/hchen98/blog/tree/master/_notebooks/test.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/hchen98/blog/master?filepath=_notebooks%2Ftest.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/hchen98/blog/blob/master/_notebooks/test.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fhchen98%2Fblog%2Fblob%2Fmaster%2F_notebooks%2Ftest.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/test.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">vega_data</span>
+<span class="n">gap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">vega_data</span><span class="o">.</span><span class="n">gapminder</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="n">gap</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>country</th>
+      <th>cluster</th>
+      <th>pop</th>
+      <th>life_expect</th>
+      <th>fertility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1955</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>8891209</td>
+      <td>30.332</td>
+      <td>7.7000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1960</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>9829450</td>
+      <td>31.997</td>
+      <td>7.7000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1965</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>10997885</td>
+      <td>34.020</td>
+      <td>7.7000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1970</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>12430623</td>
+      <td>36.088</td>
+      <td>7.7000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1975</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>14132019</td>
+      <td>38.438</td>
+      <td>7.7000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1980</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>15112149</td>
+      <td>39.854</td>
+      <td>7.8000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1985</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>13796928</td>
+      <td>40.822</td>
+      <td>7.9000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1990</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>14669339</td>
+      <td>41.674</td>
+      <td>8.0000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1995</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>20881480</td>
+      <td>41.763</td>
+      <td>8.0000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>23898198</td>
+      <td>42.129</td>
+      <td>7.4792</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gap2005</span> <span class="o">=</span> <span class="n">gap</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">gap</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2005</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">();</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gap2005</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'fertility:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'life_expect:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">'pop:Q'</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Order</span><span class="p">(</span><span class="s1">'pop:Q'</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">'descending'</span><span class="p">),</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">'country:N'</span><span class="p">),</span>
+               <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">'fertility:Q'</span><span class="p">),</span>
+               <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">'life_expect:Q'</span><span class="p">)</span>
+              <span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="s1">'cluster:N'</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'grey'</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">selection</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-81e1a5be48fc44e090efc523eebcb293"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-81e1a5be48fc44e090efc523eebcb293") {
+      outputDiv = document.getElementById("altair-viz-81e1a5be48fc44e090efc523eebcb293");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-ba34af65c64e2b3a5a008687b8c69f55"}, "mark": {"type": "point", "filled": true}, "encoding": {"color": {"condition": {"field": "cluster", "type": "nominal", "selection": "selector001"}, "value": "grey"}, "order": {"field": "pop", "sort": "descending", "type": "quantitative"}, "size": {"field": "pop", "type": "quantitative"}, "tooltip": [{"field": "country", "type": "nominal"}, {"field": "fertility", "type": "quantitative"}, {"field": "life_expect", "type": "quantitative"}], "x": {"field": "fertility", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "life_expect", "scale": {"zero": false}, "type": "quantitative"}}, "selection": {"selector001": {"type": "single"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ba34af65c64e2b3a5a008687b8c69f55": [{"year": 2005, "country": "Afghanistan", "cluster": 0, "pop": 29928987, "life_expect": 43.828, "fertility": 7.0685}, {"year": 2005, "country": "Argentina", "cluster": 3, "pop": 39537943, "life_expect": 75.32, "fertility": 2.254}, {"year": 2005, "country": "Aruba", "cluster": 3, "pop": 71566, "life_expect": 74.239, "fertility": 2.04}, {"year": 2005, "country": "Australia", "cluster": 4, "pop": 20090437, "life_expect": 81.235, "fertility": 1.788}, {"year": 2005, "country": "Austria", "cluster": 1, "pop": 8184691, "life_expect": 79.829, "fertility": 1.42}, {"year": 2005, "country": "Bahamas", "cluster": 3, "pop": 301790, "life_expect": 73.495, "fertility": 2.0221}, {"year": 2005, "country": "Bangladesh", "cluster": 0, "pop": 144319628, "life_expect": 64.062, "fertility": 2.826}, {"year": 2005, "country": "Barbados", "cluster": 3, "pop": 278870, "life_expect": 77.296, "fertility": 1.5}, {"year": 2005, "country": "Belgium", "cluster": 1, "pop": 10364388, "life_expect": 79.441, "fertility": 1.646}, {"year": 2005, "country": "Bolivia", "cluster": 3, "pop": 8857870, "life_expect": 65.554, "fertility": 3.5}, {"year": 2005, "country": "Brazil", "cluster": 3, "pop": 186112794, "life_expect": 72.39, "fertility": 2.245}, {"year": 2005, "country": "Canada", "cluster": 3, "pop": 32805041, "life_expect": 80.653, "fertility": 1.5270000000000001}, {"year": 2005, "country": "Chile", "cluster": 3, "pop": 15980912, "life_expect": 78.553, "fertility": 1.944}, {"year": 2005, "country": "China", "cluster": 4, "pop": 1303182268, "life_expect": 72.961, "fertility": 1.725}, {"year": 2005, "country": "Colombia", "cluster": 3, "pop": 42954279, "life_expect": 72.889, "fertility": 2.2205}, {"year": 2005, "country": "Costa Rica", "cluster": 3, "pop": 4016173, "life_expect": 78.782, "fertility": 2.0985}, {"year": 2005, "country": "Croatia", "cluster": 1, "pop": 4495904, "life_expect": 75.748, "fertility": 1.346}, {"year": 2005, "country": "Cuba", "cluster": 3, "pop": 11346670, "life_expect": 78.273, "fertility": 1.49}, {"year": 2005, "country": "Dominican Republic", "cluster": 3, "pop": 9049595, "life_expect": 72.235, "fertility": 2.81}, {"year": 2005, "country": "Ecuador", "cluster": 3, "pop": 13363593, "life_expect": 74.994, "fertility": 2.578}, {"year": 2005, "country": "Egypt", "cluster": 5, "pop": 77505756, "life_expect": 71.338, "fertility": 2.891}, {"year": 2005, "country": "El Salvador", "cluster": 3, "pop": 6704932, "life_expect": 71.878, "fertility": 2.6825}, {"year": 2005, "country": "Finland", "cluster": 1, "pop": 5223442, "life_expect": 79.313, "fertility": 1.8250000000000002}, {"year": 2005, "country": "France", "cluster": 1, "pop": 60656178, "life_expect": 80.657, "fertility": 1.8916}, {"year": 2005, "country": "Georgia", "cluster": 1, "pop": 4677401, "life_expect": 70.987, "fertility": 1.407}, {"year": 2005, "country": "Germany", "cluster": 1, "pop": 82431390, "life_expect": 79.406, "fertility": 1.3599999999999999}, {"year": 2005, "country": "Greece", "cluster": 1, "pop": 10668354, "life_expect": 79.483, "fertility": 1.325}, {"year": 2005, "country": "Grenada", "cluster": 3, "pop": 89502, "life_expect": 68.724, "fertility": 2.302}, {"year": 2005, "country": "Haiti", "cluster": 3, "pop": 8121622, "life_expect": 60.916, "fertility": 3.5445}, {"year": 2005, "country": "Hong Kong", "cluster": 4, "pop": 6898686, "life_expect": 82.208, "fertility": 0.966}, {"year": 2005, "country": "Iceland", "cluster": 1, "pop": 296737, "life_expect": 81.757, "fertility": 2.052}, {"year": 2005, "country": "India", "cluster": 0, "pop": 1080264388, "life_expect": 64.698, "fertility": 2.8073}, {"year": 2005, "country": "Indonesia", "cluster": 4, "pop": 218465000, "life_expect": 70.65, "fertility": 2.182}, {"year": 2005, "country": "Iran", "cluster": 5, "pop": 68017860, "life_expect": 70.964, "fertility": 2.04}, {"year": 2005, "country": "Iraq", "cluster": 5, "pop": 26074906, "life_expect": 59.545, "fertility": 4.264}, {"year": 2005, "country": "Ireland", "cluster": 1, "pop": 4015676, "life_expect": 78.885, "fertility": 1.964}, {"year": 2005, "country": "Israel", "cluster": 5, "pop": 6276883, "life_expect": 80.745, "fertility": 2.75}, {"year": 2005, "country": "Italy", "cluster": 1, "pop": 58103033, "life_expect": 80.546, "fertility": 1.379}, {"year": 2005, "country": "Jamaica", "cluster": 3, "pop": 2735520, "life_expect": 72.567, "fertility": 2.4289}, {"year": 2005, "country": "Japan", "cluster": 4, "pop": 127417244, "life_expect": 82.603, "fertility": 1.27}, {"year": 2005, "country": "Kenya", "cluster": 2, "pop": 33829590, "life_expect": 54.11, "fertility": 4.959}, {"year": 2005, "country": "South Korea", "cluster": 4, "pop": 22912177, "life_expect": 67.297, "fertility": 1.85}, {"year": 2005, "country": "North Korea", "cluster": 4, "pop": 48640671, "life_expect": 78.623, "fertility": 1.21}, {"year": 2005, "country": "Lebanon", "cluster": 5, "pop": 3826018, "life_expect": 71.993, "fertility": 2.209}, {"year": 2005, "country": "Mexico", "cluster": 3, "pop": 106202903, "life_expect": 76.195, "fertility": 2.211}, {"year": 2005, "country": "Netherlands", "cluster": 1, "pop": 16407491, "life_expect": 79.762, "fertility": 1.721}, {"year": 2005, "country": "New Zealand", "cluster": 4, "pop": 4035461, "life_expect": 80.204, "fertility": 1.994}, {"year": 2005, "country": "Nigeria", "cluster": 2, "pop": 128765768, "life_expect": 46.859, "fertility": 5.322}, {"year": 2005, "country": "Norway", "cluster": 1, "pop": 4593041, "life_expect": 80.196, "fertility": 1.8479999999999999}, {"year": 2005, "country": "Pakistan", "cluster": 0, "pop": 162419946, "life_expect": 65.483, "fertility": 3.5211}, {"year": 2005, "country": "Peru", "cluster": 3, "pop": 27925628, "life_expect": 71.421, "fertility": 2.5065}, {"year": 2005, "country": "Philippines", "cluster": 4, "pop": 87857473, "life_expect": 71.688, "fertility": 3.2327}, {"year": 2005, "country": "Poland", "cluster": 1, "pop": 38557984, "life_expect": 75.563, "fertility": 1.227}, {"year": 2005, "country": "Portugal", "cluster": 1, "pop": 10566212, "life_expect": 78.098, "fertility": 1.455}, {"year": 2005, "country": "Rwanda", "cluster": 2, "pop": 8440820, "life_expect": 46.242, "fertility": 5.9169}, {"year": 2005, "country": "Saudi Arabia", "cluster": 5, "pop": 26417599, "life_expect": 72.777, "fertility": 3.352}, {"year": 2005, "country": "South Africa", "cluster": 2, "pop": 44344136, "life_expect": 49.339, "fertility": 2.637}, {"year": 2005, "country": "Spain", "cluster": 1, "pop": 40341462, "life_expect": 80.941, "fertility": 1.409}, {"year": 2005, "country": "Switzerland", "cluster": 1, "pop": 7489370, "life_expect": 81.701, "fertility": 1.42}, {"year": 2005, "country": "Turkey", "cluster": 1, "pop": 69660559, "life_expect": 71.777, "fertility": 2.143}, {"year": 2005, "country": "United Kingdom", "cluster": 1, "pop": 60441457, "life_expect": 79.425, "fertility": 1.815}, {"year": 2005, "country": "United States", "cluster": 3, "pop": 295734134, "life_expect": 78.242, "fertility": 2.054}, {"year": 2005, "country": "Venezuela", "cluster": 3, "pop": 25375281, "life_expect": 73.747, "fertility": 2.547}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">selection</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gap2005</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'fertility:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'life_expect:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">'pop:Q'</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Order</span><span class="p">(</span><span class="s1">'pop:Q'</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">'descending'</span><span class="p">),</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">'country:N'</span><span class="p">),</span>
+               <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">'fertility:Q'</span><span class="p">),</span>
+               <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">'life_expect:Q'</span><span class="p">)</span>
+              <span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="s1">'cluster:N'</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'grey'</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">selection</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">hconcat</span><span class="p">(</span>
+  <span class="n">plot</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">())</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Single (Click)'</span><span class="p">),</span>
+  <span class="n">plot</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">selection_multi</span><span class="p">())</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Multi (Shift-Click)'</span><span class="p">),</span>
+  <span class="n">plot</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">selection_interval</span><span class="p">())</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Interval (Drag)'</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-df8cb527b91a4f60ab53ffd866875e69"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-df8cb527b91a4f60ab53ffd866875e69") {
+      outputDiv = document.getElementById("altair-viz-df8cb527b91a4f60ab53ffd866875e69");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"mark": {"type": "point", "filled": true}, "encoding": {"color": {"condition": {"field": "cluster", "type": "nominal", "selection": "selector002"}, "value": "grey"}, "order": {"field": "pop", "sort": "descending", "type": "quantitative"}, "size": {"field": "pop", "type": "quantitative"}, "tooltip": [{"field": "country", "type": "nominal"}, {"field": "fertility", "type": "quantitative"}, {"field": "life_expect", "type": "quantitative"}], "x": {"field": "fertility", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "life_expect", "scale": {"zero": false}, "type": "quantitative"}}, "selection": {"selector002": {"type": "single"}}, "title": "Single (Click)"}, {"mark": {"type": "point", "filled": true}, "encoding": {"color": {"condition": {"field": "cluster", "type": "nominal", "selection": "selector003"}, "value": "grey"}, "order": {"field": "pop", "sort": "descending", "type": "quantitative"}, "size": {"field": "pop", "type": "quantitative"}, "tooltip": [{"field": "country", "type": "nominal"}, {"field": "fertility", "type": "quantitative"}, {"field": "life_expect", "type": "quantitative"}], "x": {"field": "fertility", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "life_expect", "scale": {"zero": false}, "type": "quantitative"}}, "selection": {"selector003": {"type": "multi"}}, "title": "Multi (Shift-Click)"}, {"mark": {"type": "point", "filled": true}, "encoding": {"color": {"condition": {"field": "cluster", "type": "nominal", "selection": "selector004"}, "value": "grey"}, "order": {"field": "pop", "sort": "descending", "type": "quantitative"}, "size": {"field": "pop", "type": "quantitative"}, "tooltip": [{"field": "country", "type": "nominal"}, {"field": "fertility", "type": "quantitative"}, {"field": "life_expect", "type": "quantitative"}], "x": {"field": "fertility", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "life_expect", "scale": {"zero": false}, "type": "quantitative"}}, "selection": {"selector004": {"type": "interval"}}, "title": "Interval (Drag)"}], "data": {"name": "data-ba34af65c64e2b3a5a008687b8c69f55"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ba34af65c64e2b3a5a008687b8c69f55": [{"year": 2005, "country": "Afghanistan", "cluster": 0, "pop": 29928987, "life_expect": 43.828, "fertility": 7.0685}, {"year": 2005, "country": "Argentina", "cluster": 3, "pop": 39537943, "life_expect": 75.32, "fertility": 2.254}, {"year": 2005, "country": "Aruba", "cluster": 3, "pop": 71566, "life_expect": 74.239, "fertility": 2.04}, {"year": 2005, "country": "Australia", "cluster": 4, "pop": 20090437, "life_expect": 81.235, "fertility": 1.788}, {"year": 2005, "country": "Austria", "cluster": 1, "pop": 8184691, "life_expect": 79.829, "fertility": 1.42}, {"year": 2005, "country": "Bahamas", "cluster": 3, "pop": 301790, "life_expect": 73.495, "fertility": 2.0221}, {"year": 2005, "country": "Bangladesh", "cluster": 0, "pop": 144319628, "life_expect": 64.062, "fertility": 2.826}, {"year": 2005, "country": "Barbados", "cluster": 3, "pop": 278870, "life_expect": 77.296, "fertility": 1.5}, {"year": 2005, "country": "Belgium", "cluster": 1, "pop": 10364388, "life_expect": 79.441, "fertility": 1.646}, {"year": 2005, "country": "Bolivia", "cluster": 3, "pop": 8857870, "life_expect": 65.554, "fertility": 3.5}, {"year": 2005, "country": "Brazil", "cluster": 3, "pop": 186112794, "life_expect": 72.39, "fertility": 2.245}, {"year": 2005, "country": "Canada", "cluster": 3, "pop": 32805041, "life_expect": 80.653, "fertility": 1.5270000000000001}, {"year": 2005, "country": "Chile", "cluster": 3, "pop": 15980912, "life_expect": 78.553, "fertility": 1.944}, {"year": 2005, "country": "China", "cluster": 4, "pop": 1303182268, "life_expect": 72.961, "fertility": 1.725}, {"year": 2005, "country": "Colombia", "cluster": 3, "pop": 42954279, "life_expect": 72.889, "fertility": 2.2205}, {"year": 2005, "country": "Costa Rica", "cluster": 3, "pop": 4016173, "life_expect": 78.782, "fertility": 2.0985}, {"year": 2005, "country": "Croatia", "cluster": 1, "pop": 4495904, "life_expect": 75.748, "fertility": 1.346}, {"year": 2005, "country": "Cuba", "cluster": 3, "pop": 11346670, "life_expect": 78.273, "fertility": 1.49}, {"year": 2005, "country": "Dominican Republic", "cluster": 3, "pop": 9049595, "life_expect": 72.235, "fertility": 2.81}, {"year": 2005, "country": "Ecuador", "cluster": 3, "pop": 13363593, "life_expect": 74.994, "fertility": 2.578}, {"year": 2005, "country": "Egypt", "cluster": 5, "pop": 77505756, "life_expect": 71.338, "fertility": 2.891}, {"year": 2005, "country": "El Salvador", "cluster": 3, "pop": 6704932, "life_expect": 71.878, "fertility": 2.6825}, {"year": 2005, "country": "Finland", "cluster": 1, "pop": 5223442, "life_expect": 79.313, "fertility": 1.8250000000000002}, {"year": 2005, "country": "France", "cluster": 1, "pop": 60656178, "life_expect": 80.657, "fertility": 1.8916}, {"year": 2005, "country": "Georgia", "cluster": 1, "pop": 4677401, "life_expect": 70.987, "fertility": 1.407}, {"year": 2005, "country": "Germany", "cluster": 1, "pop": 82431390, "life_expect": 79.406, "fertility": 1.3599999999999999}, {"year": 2005, "country": "Greece", "cluster": 1, "pop": 10668354, "life_expect": 79.483, "fertility": 1.325}, {"year": 2005, "country": "Grenada", "cluster": 3, "pop": 89502, "life_expect": 68.724, "fertility": 2.302}, {"year": 2005, "country": "Haiti", "cluster": 3, "pop": 8121622, "life_expect": 60.916, "fertility": 3.5445}, {"year": 2005, "country": "Hong Kong", "cluster": 4, "pop": 6898686, "life_expect": 82.208, "fertility": 0.966}, {"year": 2005, "country": "Iceland", "cluster": 1, "pop": 296737, "life_expect": 81.757, "fertility": 2.052}, {"year": 2005, "country": "India", "cluster": 0, "pop": 1080264388, "life_expect": 64.698, "fertility": 2.8073}, {"year": 2005, "country": "Indonesia", "cluster": 4, "pop": 218465000, "life_expect": 70.65, "fertility": 2.182}, {"year": 2005, "country": "Iran", "cluster": 5, "pop": 68017860, "life_expect": 70.964, "fertility": 2.04}, {"year": 2005, "country": "Iraq", "cluster": 5, "pop": 26074906, "life_expect": 59.545, "fertility": 4.264}, {"year": 2005, "country": "Ireland", "cluster": 1, "pop": 4015676, "life_expect": 78.885, "fertility": 1.964}, {"year": 2005, "country": "Israel", "cluster": 5, "pop": 6276883, "life_expect": 80.745, "fertility": 2.75}, {"year": 2005, "country": "Italy", "cluster": 1, "pop": 58103033, "life_expect": 80.546, "fertility": 1.379}, {"year": 2005, "country": "Jamaica", "cluster": 3, "pop": 2735520, "life_expect": 72.567, "fertility": 2.4289}, {"year": 2005, "country": "Japan", "cluster": 4, "pop": 127417244, "life_expect": 82.603, "fertility": 1.27}, {"year": 2005, "country": "Kenya", "cluster": 2, "pop": 33829590, "life_expect": 54.11, "fertility": 4.959}, {"year": 2005, "country": "South Korea", "cluster": 4, "pop": 22912177, "life_expect": 67.297, "fertility": 1.85}, {"year": 2005, "country": "North Korea", "cluster": 4, "pop": 48640671, "life_expect": 78.623, "fertility": 1.21}, {"year": 2005, "country": "Lebanon", "cluster": 5, "pop": 3826018, "life_expect": 71.993, "fertility": 2.209}, {"year": 2005, "country": "Mexico", "cluster": 3, "pop": 106202903, "life_expect": 76.195, "fertility": 2.211}, {"year": 2005, "country": "Netherlands", "cluster": 1, "pop": 16407491, "life_expect": 79.762, "fertility": 1.721}, {"year": 2005, "country": "New Zealand", "cluster": 4, "pop": 4035461, "life_expect": 80.204, "fertility": 1.994}, {"year": 2005, "country": "Nigeria", "cluster": 2, "pop": 128765768, "life_expect": 46.859, "fertility": 5.322}, {"year": 2005, "country": "Norway", "cluster": 1, "pop": 4593041, "life_expect": 80.196, "fertility": 1.8479999999999999}, {"year": 2005, "country": "Pakistan", "cluster": 0, "pop": 162419946, "life_expect": 65.483, "fertility": 3.5211}, {"year": 2005, "country": "Peru", "cluster": 3, "pop": 27925628, "life_expect": 71.421, "fertility": 2.5065}, {"year": 2005, "country": "Philippines", "cluster": 4, "pop": 87857473, "life_expect": 71.688, "fertility": 3.2327}, {"year": 2005, "country": "Poland", "cluster": 1, "pop": 38557984, "life_expect": 75.563, "fertility": 1.227}, {"year": 2005, "country": "Portugal", "cluster": 1, "pop": 10566212, "life_expect": 78.098, "fertility": 1.455}, {"year": 2005, "country": "Rwanda", "cluster": 2, "pop": 8440820, "life_expect": 46.242, "fertility": 5.9169}, {"year": 2005, "country": "Saudi Arabia", "cluster": 5, "pop": 26417599, "life_expect": 72.777, "fertility": 3.352}, {"year": 2005, "country": "South Africa", "cluster": 2, "pop": 44344136, "life_expect": 49.339, "fertility": 2.637}, {"year": 2005, "country": "Spain", "cluster": 1, "pop": 40341462, "life_expect": 80.941, "fertility": 1.409}, {"year": 2005, "country": "Switzerland", "cluster": 1, "pop": 7489370, "life_expect": 81.701, "fertility": 1.42}, {"year": 2005, "country": "Turkey", "cluster": 1, "pop": 69660559, "life_expect": 71.777, "fertility": 2.143}, {"year": 2005, "country": "United Kingdom", "cluster": 1, "pop": 60441457, "life_expect": 79.425, "fertility": 1.815}, {"year": 2005, "country": "United States", "cluster": 3, "pop": 295734134, "life_expect": 78.242, "fertility": 2.054}, {"year": 2005, "country": "Venezuela", "cluster": 3, "pop": 25375281, "life_expect": 73.747, "fertility": 2.547}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="hchen98/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/test/markdown/2022/09/06/test.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Hey there! This is my personal blog! I will be sharing things about Data Science through this blog!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/hchen98" target="_blank" title="hchen98"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/hchen98" target="_blank" title="hchen98"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/hchen98x" target="_blank" title="hchen98x"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
